@@ -1,60 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <!-- import CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<meta charset="utf-8"> 
+<title>菜鸟教程(runoob.com)</title> 
+<style> 
+#myDIV {
+    width: 120px;
+    background-color: coral;
+    color: white;
+    -webkit-animation: mymove 5s infinite; /* Chrome, Safari, Opera */
+    animation: mymove 5s infinite;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove {
+    50% {width: 500px;}
+}
+
+/* Standard syntax */
+@keyframes mymove {
+    50% {width: 500px;}
+}
+</style>
 </head>
 <body>
-  <div id="app">
-	<template>
-		<el-table
-		:data="tableData"
-		stripe
-		style="width: 100%">
-		<el-table-column prop="name" label="名称" width="">
-			<template slot-scope="scope">
-				<el-link :href="scope.row.url"  type="primary" target="_blank">{{scope.row.name}}</el-link>
-			</template>
-		</el-table-column>
-		
-		<el-table-column prop="desc" label="描述" width="">
-		</el-table-column>
-		
-		<el-table-column  prop="stars" label="stars">
-			<template slot-scope="scope">
-				<img alt="GitHub stars" :src="scope.row.stars"> 
-			</template>
-		</el-table-column>
-	  </el-table>
-	</template>
-  </div>
-  
-  
-</body>
-  <!-- import Vue before Element -->
-  <script src="https://unpkg.com/vue/dist/vue.js"></script>
-  <!-- import JavaScript -->
-  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
-  <script>
-    new Vue({
-      el: '#app',
-      data: function() {
-		return { 
-			tableData: [{
-				name:'hexagon',
-				url: 'https://github.com/adamsiwiec/hexagon',
-				desc: 'desc',
-				stars: 'https://img.shields.io/github/stars/xiongyizhu/auto-danmu?style=social',
-				count: 27,
-			}
-			
-			
-			
-]
 
-		}
-      }
-    })
-  </script>
+<p> width 属性支持动画效果。</p>
+<p><b>注意：</b>Internet Explorer 9 及更早 IE 版本不支持 CSS 动画。</p>
+
+<p>逐步改变 DIV 元素的宽度，从 120px 到 500px:<p>
+<div id="myDIV">
+  <h1>My DIV</h1>
+</div>
+
+</body>
 </html>
